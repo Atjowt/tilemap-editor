@@ -64,7 +64,7 @@ int main()
 
     Mode activeMode = MODE_SELECT;
 
-    InitializeTilemap();
+    InitTilemap();
 
     while (!WindowShouldClose())
     {
@@ -156,7 +156,7 @@ int main()
             activeMode = MODE_ERASE;
         }
 
-        if(IsKeyDown(KEY_LEFT_CONTROL) && IsKeyPressed(KEY_A))
+        if(IsKeyPressed(KEY_A) && IsKeyDown(KEY_LEFT_CONTROL))
         {
             selectionStartX = 0;
             selectionStartY = 0;
@@ -207,8 +207,7 @@ int main()
             isSelectionActive = false;
         }
 
-        // Really you only need to update around the border
-        if((IsKeyPressed(KEY_X) || IsKeyPressed(KEY_DELETE)) && isSelectionActive)
+        else if((IsKeyPressed(KEY_X) || IsKeyPressed(KEY_DELETE)) && isSelectionActive)
         {
             for (int y = 0; y < selectionHeight; y++)
             {
@@ -247,7 +246,6 @@ int main()
                 bool erased = RemoveTile(hoverX, hoverY);
                 if(erased) PlaySound(eraseSound);
             }
-
         }
 
         BeginDrawing();
@@ -280,7 +278,7 @@ int main()
                 {
                     Tile tile = tilemap[y][x];
 
-                    unsigned int i = tileOffsets[tile >> 1];
+                    unsigned int i = tileOffsets[(tile & 0b000011110) >> 1];
 
                     unsigned int u = i % 4;
                     unsigned int v = i / 4;
@@ -300,6 +298,32 @@ int main()
                     };
 
                     DrawTexturePro(tilesetTexture, src, dest, Vector2Zero(), 0, WHITE);
+                    
+                    if(tile & 0b000100000)
+                    {
+                        src.x = 0 * tileSize;
+                        src.y = 4 * tileSize;
+                        DrawTexturePro(tilesetTexture, src, dest, Vector2Zero(), 0, WHITE);
+                    }
+                    if(tile & 0b001000000)
+                    {
+                        src.x = 1 * tileSize;
+                        src.y = 4 * tileSize;
+                        DrawTexturePro(tilesetTexture, src, dest, Vector2Zero(), 0, WHITE);
+                    }
+                    if(tile & 0b010000000)
+                    {
+                        src.x = 2 * tileSize;
+                        src.y = 4 * tileSize;
+                        DrawTexturePro(tilesetTexture, src, dest, Vector2Zero(), 0, WHITE);
+                    }
+                    if(tile & 0b100000000)
+                    {
+                        src.x = 3 * tileSize;
+                        src.y = 4 * tileSize;
+                        DrawTexturePro(tilesetTexture, src, dest, Vector2Zero(), 0, WHITE);
+                    }
+
                 }
             }
         }
