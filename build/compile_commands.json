@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/atjowt/dev/tilemap-editor/build",
-  "command": "/usr/bin/clang   -g -o CMakeFiles/tilemap-editor.dir/main.c.o -c /home/atjowt/dev/tilemap-editor/main.c",
-  "file": "/home/atjowt/dev/tilemap-editor/main.c"
+  "directory": "/home/atjowt/repo/tilemap-editor/build",
+  "command": "/usr/bin/cc   -g -o CMakeFiles/tilemap-editor.dir/main.c.o -c /home/atjowt/repo/tilemap-editor/main.c",
+  "file": "/home/atjowt/repo/tilemap-editor/main.c"
 }
 ]

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/atjowt/dev/tilemap-editor/main.c" "CMakeFiles/tilemap-editor.dir/main.c.o" "gcc" "CMakeFiles/tilemap-editor.dir/main.c.o.d"
+  "/home/atjowt/repo/tilemap-editor/main.c" "CMakeFiles/tilemap-editor.dir/main.c.o" "gcc" "CMakeFiles/tilemap-editor.dir/main.c.o.d"
   )
 
 # Targets to which this target links.
