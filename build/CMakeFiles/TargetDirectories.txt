@@ -1,5 +1,0 @@
-/home/atjowt/repo/tilemap-editor/build/CMakeFiles/tilemap-editor.dir
-/home/atjowt/repo/tilemap-editor/build/CMakeFiles/package.dir
-/home/atjowt/repo/tilemap-editor/build/CMakeFiles/package_source.dir
-/home/atjowt/repo/tilemap-editor/build/CMakeFiles/edit_cache.dir
-/home/atjowt/repo/tilemap-editor/build/CMakeFiles/rebuild_cache.dir
